@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { AdministrationRoutingModule } from './administration-routing.module';
 import { AdministrationComponent } from './administration.component';
-import { HomeComponent } from './administration/home/home.component';
-import { BoardComponent } from './administration/board/board.component';
-import { ActuComponent } from './administration/actu/actu.component';
+import { HomeComponent } from './components/home/home.component';
+import { BoardComponent } from './components/board/board.component';
+import { ActuComponent } from './components/actu/actu.component';
 
 
 @NgModule({
