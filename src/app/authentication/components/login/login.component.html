@@ -40,6 +40,7 @@
     nz-button
     class="login-form-button login-form-margin"
     [nzType]="'primary'"
+    [disabled]="!validateForm.valid"
   >
     Submit
   </button>

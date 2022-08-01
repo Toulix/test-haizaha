@@ -1,3 +1,4 @@
+import { AuthService } from './../../../core/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,20 +11,24 @@ export class LoginComponent implements OnInit {
 
   validateForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private authService: AuthService) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      remember: [true]
     });
   }
 
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
+
+      const { userName, password } = this.validateForm.value;
+
+      this.authService.login(userName, password);
+
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
