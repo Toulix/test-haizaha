@@ -3,16 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/authentication' },
-
-  // { path: 'welcome', 
-  //   loadChildren: () => import('./pages/welcome/welcome.module')
-  //   .then(m => m.WelcomeModule) },
-
   { 
     path: 'authentication', 
     loadChildren: 
               () => import('./authentication/authentication.module')
                     .then(m => m.AuthenticationModule)
+  },
+  { 
+    path: 'administration', 
+    loadChildren: () => import('./administration/administration.module')
+                      .then(m => m.AdministrationModule) 
   }
 ];
 
