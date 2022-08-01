@@ -1,1 +1,6 @@
-<p>actu works!</p>
+<p>{{ currentRoute | titlecase }}</p>
+<ul class="list-group">
+  <nz-card *ngFor="let post of posts" class="list-group-item">
+    {{ post.title }}
+  </nz-card>
+</ul>

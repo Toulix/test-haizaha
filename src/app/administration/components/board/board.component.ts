@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  currentRoute!: string;
+
+  constructor(public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this.currentRoute = this.activatedRoute?.snapshot?.url[0]?.path;
+   }
 
 }

@@ -6,18 +6,21 @@ import { AdministrationComponent } from './administration.component';
 import { HomeComponent } from './components/home/home.component';
 import { BoardComponent } from './components/board/board.component';
 import { ActuComponent } from './components/actu/actu.component';
-
+import { NgZorroAntdModule } from '../ng-zorro-antd.module';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AdministrationComponent,
     HomeComponent,
     BoardComponent,
-    ActuComponent
+    ActuComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
-    AdministrationRoutingModule
+    AdministrationRoutingModule,
+    NgZorroAntdModule
   ]
 })
 export class AdministrationModule { }
