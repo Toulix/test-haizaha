@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NewsService {
 
-  private url = 'http://jsonplaceholder.typicode.com/posts?_start=0&_limit=5';
+  private url = 'http://jsonplaceholder.typicode.com/photos?_start=0&_limit=5';
 
   constructor(private httpClient: HttpClient) {}
 
