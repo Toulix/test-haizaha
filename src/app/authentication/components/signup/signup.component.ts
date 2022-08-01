@@ -17,7 +17,6 @@ export class SignupComponent implements OnInit {
       email: [null, [Validators.email, Validators.required]],
       password: [null, [Validators.required]],
       verifyPassword: [null, [Validators.required, this.confirmationValidator]],
-      nickname: [null, [Validators.required]],
     })
   }
 
