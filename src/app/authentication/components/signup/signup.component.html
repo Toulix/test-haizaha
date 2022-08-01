@@ -1,1 +1,62 @@
-<p>signup works!</p>
+<form
+  nz-form
+  [formGroup]="validateForm"
+  (ngSubmit)="submitForm()"
+  class="signup-form"
+>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your username!">
+      <input
+        nz-input
+        id="nickname"
+        formControlName="nickname"
+        placeholder="Username"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control nzErrorTip="The input is not valid E-mail!">
+      <input nz-input formControlName="email" id="email" placeholder="Email" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your password!">
+      <input
+        nz-input
+        type="password"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+        (ngModelChange)="updateConfirmValidator()"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzErrorTip]="errorTpl">
+      <input
+        nz-input
+        type="password"
+        formControlName="verifyPassword"
+        id="verifyPassword"
+        placeholder="Verify password"
+      />
+      <ng-template #errorTpl let-control>
+        <ng-container *ngIf="control.hasError('required')"
+          >Please confirm your password!</ng-container
+        >
+        <ng-container *ngIf="control.hasError('confirm')">
+          Two passwords that you enter is inconsistent!
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row nzJustify="center" class="register-area">
+    <nz-form-control nz-col nzSpan="4">
+      <button nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
