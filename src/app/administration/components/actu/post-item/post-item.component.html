@@ -1,4 +1,5 @@
 <nz-card class="list-group-item">
   <nz-avatar [nzSrc]="post.url"> </nz-avatar>
   {{ post.title }}
+  <a (click)="viewPostDetail(post.id)">Voir</a>
 </nz-card>

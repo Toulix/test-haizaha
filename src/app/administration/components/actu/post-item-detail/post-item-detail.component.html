@@ -1,0 +1,6 @@
+<div *ngIf="postDetail$ | async as postDetail">
+  <div>
+    <p>Title: {{ postDetail.title }}</p>
+    <img [src]="postDetail.url" alt="" />
+  </div>
+</div>

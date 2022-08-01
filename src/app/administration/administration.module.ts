@@ -9,6 +9,7 @@ import { ActuComponent } from './components/actu/actu.component';
 import { NgZorroAntdModule } from '../ng-zorro-antd.module';
 import { HeaderComponent } from './components/header/header.component';
 import { PostItemComponent } from './components/actu/post-item/post-item.component';
+import { PostItemDetailComponent } from './components/actu/post-item-detail/post-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PostItemComponent } from './components/actu/post-item/post-item.compone
     BoardComponent,
     ActuComponent,
     HeaderComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostItemDetailComponent
   ],
   imports: [
     CommonModule,

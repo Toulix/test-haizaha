@@ -1,3 +1,4 @@
+import { PostItemDetailComponent } from './components/actu/post-item-detail/post-item-detail.component';
 import { ActuComponent } from './components/actu/actu.component';
 import { BoardComponent } from './components/board/board.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,7 +20,11 @@ const routes: Routes = [
       },
       {
         path: 'actu',
-        component: ActuComponent
+        component: ActuComponent,
+      },
+      {
+        path: 'actu/:id',
+        component: PostItemDetailComponent,
       }
     ]
   }];

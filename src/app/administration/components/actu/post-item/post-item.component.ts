@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Post } from './../../../../models/post';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -12,9 +13,13 @@ export class PostItemComponent implements OnInit {
   post!: Post;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  viewPostDetail(id: number) {
+    this.router.navigate(['administration/actu', id]);
   }
 
 }
